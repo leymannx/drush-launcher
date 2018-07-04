@@ -1,6 +1,6 @@
 {
-  "main": "bin/drush.php",
-  "output": "drush.phar",
+  "main": "bin/wp-cli.php",
+  "output": "wp-cli.phar",
   "finder": [
     {
       "name": "*.php",
