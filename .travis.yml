@@ -22,5 +22,5 @@ deploy:
     - wp-cli.phar
     - wp-cli.version
   on:
-    repo: drush-ops/drush-launcher
+    repo: leymannx/wp-cli-launcher
     tags: true
