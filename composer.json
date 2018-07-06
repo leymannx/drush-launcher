@@ -1,6 +1,6 @@
 {
-    "name": "drush/drush-launcher",
-    "description": "Provides a drush executable for your global PATH",
+    "name": "leymannx/wp-cli-launcher",
+    "description": "Provides a wp-cli executable for your global PATH",
     "license": "GPL-2.0-or-later",
     "require": {
         "webflo/drupal-finder": "^1.0",
@@ -9,15 +9,15 @@
         "composer/xdebug-handler": "^1.0"
     },
     "conflict": {
-        "drush/drush": "*"
+        "wp-cli/wp-cli": "*"
     },
     "authors": [
         {
-            "name": "Florian Weber",
-            "email": "florian@webflo.org"
+            "name": "Norman Kämper-Leymann",
+            "email": "hello@leymannx.de"
         }
     ],
     "bin": [
-        "bin/drush"
+        "bin/wp"
     ]
 }
