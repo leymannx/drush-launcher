@@ -41,7 +41,7 @@ However, it is inconvenient to type `vendor/bin/wp` in order to execute WP-CLI c
 The WP-CLI Launcher Phar is able to self update to the latest release.
 
 ```Shell
-    wp self-update
+wp self-update
 ```
 
 ## Alternatives
