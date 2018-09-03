@@ -80,7 +80,7 @@ if ($SELF_UPDATE) {
 $wordpressFinder = new WordpressFinder();
 
 if ($VERSION_CHECK) {
-  echo "Drush Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
+  echo "WP-CLI Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
   exit(0);
 }
 
