@@ -25,8 +25,6 @@ else {
   exit(1);
 }
 
-$LAUNCHER_VERSION = '@git-version@';
-
 $PATH = FALSE;
 $VERSION_CHECK = FALSE;
 $SELF_UPDATE = FALSE;
@@ -53,8 +51,11 @@ foreach ($_SERVER['argv'] as $arg) {
   }
 }
 
-if ($PATH === FALSE) {
-  $PATH = getcwd();
+$LAUNCHER_VERSION = '@git-version@';
+
+if ($VERSION_CHECK || $SELF_UPDATE) {
+  echo "WP-CLI Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
+  exit(0);
 }
 
 if ($SELF_UPDATE) {
@@ -70,6 +71,7 @@ if ($SELF_UPDATE) {
   try {
     $result = $updater->update();
     echo $result ? "Updated!\n" : "No update needed!\n";
+    echo "WP-CLI Launcher Version: " . $updater->getNewVersion() . PHP_EOL;
     exit(0);
   } catch (\Exception $e) {
     echo "Automatic update failed, please download the latest version from https://github.com/leymannx/wp-cli-launcher/releases\n";
@@ -77,12 +79,11 @@ if ($SELF_UPDATE) {
   }
 }
 
-$wordpressFinder = new WordpressFinder();
-
-if ($VERSION_CHECK) {
-  echo "WP-CLI Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
-  exit(0);
+if ($PATH === FALSE) {
+  $PATH = getcwd();
 }
+
+$wordpressFinder = new WordpressFinder();
 
 if ($wordpressFinder->locateRoot($PATH)) {
   $webRoot = $wordpressFinder->getWebRoot();
