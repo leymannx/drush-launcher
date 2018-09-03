@@ -52,6 +52,7 @@ $drupalFinder = new WordpressFinder();
 
 if ($VERSION) {
   echo "Drush Launcher Version: {$DRUSH_LAUNCHER_VERSION}" . PHP_EOL;
+  exit(0);
 }
 
 if ($drupalFinder->locateRoot($ROOT)) {
@@ -61,6 +62,7 @@ if ($drupalFinder->locateRoot($ROOT)) {
   if (file_exists(Path::join($drupalFinder->getVendorDir(), 'wp-cli/wp-cli/VERSION'))) {
     $version_file = Path::join($drupalFinder->getVendorDir(), 'wp-cli/wp-cli/VERSION');
     $DRUSH_VERSION = file_get_contents($version_file);
+    echo "WP-CLI: {$DRUSH_VERSION}" . PHP_EOL;
   }
 
   if ($DRUSH_VERSION == '2.0.1') {
