@@ -1,7 +1,6 @@
 <?php
 
 use WordpressFinder\WordpressFinder;
-use Webmozart\PathUtil\Path;
 
 set_time_limit(0);
 
@@ -59,8 +58,8 @@ if ($drupalFinder->locateRoot($ROOT)) {
   $drupalRoot = $drupalFinder->getWebRoot();
 
   // Detect WP-CLI version
-  if (file_exists(Path::join($drupalFinder->getVendorDir(), 'wp-cli/wp-cli/VERSION'))) {
-    $version_file = Path::join($drupalFinder->getVendorDir(), 'wp-cli/wp-cli/VERSION');
+  if (file_exists($drupalFinder->getVendorDir() . '/wp-cli/wp-cli/VERSION')) {
+    $version_file = $drupalFinder->getVendorDir() . '/wp-cli/wp-cli/VERSION';
     $DRUSH_VERSION = file_get_contents($version_file);
     echo "WP-CLI: {$DRUSH_VERSION}" . PHP_EOL;
   }

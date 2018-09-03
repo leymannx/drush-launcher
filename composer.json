@@ -3,8 +3,7 @@
     "description": "Provides a wp-cli executable for your global PATH",
     "license": "GPL-2.0-or-later",
     "require": {
-        "leymannx/wordpress-finder": "^0.0.1",
-        "webmozart/path-util": "^2.3"
+        "leymannx/wordpress-finder": "^0.0.3"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
