@@ -1,6 +1,7 @@
 <?php
 
 use WordpressFinder\WordpressFinder;
+use Humbug\SelfUpdate\Updater;
 
 set_time_limit(0);
 
@@ -26,7 +27,10 @@ else {
 
 $LAUNCHER_VERSION = '@git-version@';
 
+$PATH = FALSE;
 $VERSION_CHECK = FALSE;
+$SELF_UPDATE = FALSE;
+
 foreach ($_SERVER['argv'] as $arg) {
   // If a variable to set was indicated on the previous iteration,
   // then set the value of the named variable (e.g. "ROOT") to "$arg".
@@ -39,11 +43,39 @@ foreach ($_SERVER['argv'] as $arg) {
       case "--version":
         $VERSION_CHECK = TRUE;
         break;
+      case "self-update":
+        $SELF_UPDATE = TRUE;
+        break;
+    }
+    if (substr($arg, 0, 7) == "--path=") {
+      $PATH = substr($arg, 7);
     }
   }
 }
 
-$ROOT = getcwd();
+if ($PATH === FALSE) {
+  $PATH = getcwd();
+}
+
+if ($SELF_UPDATE) {
+  if ($LAUNCHER_VERSION === '@' . 'git-version' . '@') {
+    echo "Automatic update not supported.\n";
+    exit(1);
+  }
+  $updater = new Updater(null, false);
+  $updater->setStrategy(Updater::STRATEGY_GITHUB);
+  $updater->getStrategy()->setPackageName('leymannx/wp-cli-launcher');
+  $updater->getStrategy()->setPharName('wp-cli.phar');
+  $updater->getStrategy()->setCurrentLocalVersion($LAUNCHER_VERSION);
+  try {
+    $result = $updater->update();
+    echo $result ? "Updated!\n" : "No update needed!\n";
+    exit(0);
+  } catch (\Exception $e) {
+    echo "Automatic update failed, please download the latest version from https://github.com/leymannx/wp-cli-launcher/releases\n";
+    exit(1);
+  }
+}
 
 $wordpressFinder = new WordpressFinder();
 
@@ -52,7 +84,7 @@ if ($VERSION_CHECK) {
   exit(0);
 }
 
-if ($wordpressFinder->locateRoot($ROOT)) {
+if ($wordpressFinder->locateRoot($PATH)) {
   $webRoot = $wordpressFinder->getWebRoot();
 
   // Detect WP-CLI version.
@@ -74,7 +106,7 @@ if ($wordpressFinder->locateRoot($ROOT)) {
     require_once $wordpressFinder->getVendorDir() . '/wp-cli/wp-cli/php/boot-fs.php';
 
     // And change back.
-    chdir($ROOT);
+    chdir($PATH);
 
     exit(0);
   }

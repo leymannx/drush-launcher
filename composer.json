@@ -3,7 +3,8 @@
     "description": "Provides a wp-cli executable for your global PATH",
     "license": "GPL-2.0-or-later",
     "require": {
-        "leymannx/wordpress-finder": "^0.0.4"
+        "leymannx/wordpress-finder": "^0.0.4",
+        "padraic/phar-updater": "^1.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
