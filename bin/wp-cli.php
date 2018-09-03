@@ -67,6 +67,8 @@ if ($drupalFinder->locateRoot($ROOT)) {
   if ($DRUSH_VERSION == '2.0.1') {
     chdir($drupalRoot);
     require_once $drupalFinder->getVendorDir() . '/wp-cli/wp-cli/php/boot-fs.php';
+  // For now WP-CLI version must be anywhere between 2.0.0 and 3.0.0.
+  if (gettype($WP_CLI_VERSION) == 'string' && version_compare($WP_CLI_VERSION, '2.0.0') && version_compare('3.0.0', $WP_CLI_VERSION, '<=')) {
     chdir($ROOT);
     exit(0);
   }
