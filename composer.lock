@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "77894af8dc5fc19213b88fe5c9c685e9",
+    "content-hash": "801daa89333ca4ed7c0270565f9d5e5d",
     "packages": [
         {
             "name": "leymannx/wordpress-finder",
-            "version": "0.0.3",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leymannx/wordpress-finder.git",
-                "reference": "ee7e0ee7ac280558024c6e43238d55310317e9cf"
+                "reference": "8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leymannx/wordpress-finder/zipball/ee7e0ee7ac280558024c6e43238d55310317e9cf",
-                "reference": "ee7e0ee7ac280558024c6e43238d55310317e9cf",
+                "url": "https://api.github.com/repos/leymannx/wordpress-finder/zipball/8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4",
+                "reference": "8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4",
                 "shasum": ""
             },
             "require": {
@@ -40,7 +40,7 @@
                 }
             ],
             "description": "Helper class to locate a WordPress installation from a given path.",
-            "time": "2018-09-03T10:12:38+00:00"
+            "time": "2018-09-03T11:40:42+00:00"
         }
     ],
     "packages-dev": [],
