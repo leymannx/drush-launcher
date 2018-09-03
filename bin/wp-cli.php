@@ -53,7 +53,7 @@ foreach ($_SERVER['argv'] as $arg) {
 
 $LAUNCHER_VERSION = '@git-version@';
 
-if ($VERSION_CHECK || $SELF_UPDATE) {
+if ($VERSION_CHECK) {
   echo "WP-CLI Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
   exit(0);
 }
@@ -63,7 +63,10 @@ if ($SELF_UPDATE) {
     echo "Automatic update not supported.\n";
     exit(1);
   }
-  $updater = new Updater(null, false);
+  else {
+    echo "WP-CLI Launcher Version: {$LAUNCHER_VERSION}" . PHP_EOL;
+  }
+  $updater = new Updater(NULL, FALSE);
   $updater->setStrategy(Updater::STRATEGY_GITHUB);
   $updater->getStrategy()->setPackageName('leymannx/wp-cli-launcher');
   $updater->getStrategy()->setPharName('wp-cli.phar');
