@@ -14,13 +14,13 @@ However, it is inconvenient to type `vendor/bin/wp` in order to execute WP-CLI c
 
     OSX:
     ```Shell
-    curl -OL https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.9/wp-cli.phar
+    curl -OL https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.10/wp-cli.phar
     ```
 
     Linux:
 
     ```Shell
-    wget -O wp-cli.phar https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.9/wp-cli.phar
+    wget -O wp-cli.phar https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.10/wp-cli.phar
     ```
 2. Make downloaded file executable:
     ```Shell
