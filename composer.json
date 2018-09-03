@@ -3,13 +3,13 @@
     "description": "Provides a wp-cli executable for your global PATH",
     "license": "GPL-2.0-or-later",
     "require": {
-        "webflo/drupal-finder": "^1.0",
-        "webmozart/path-util": "^2.3",
-        "padraic/phar-updater": "^1.0",
-        "composer/xdebug-handler": "^1.0"
+        "leymannx/wordpress-finder": "^0.0.1",
+        "webmozart/path-util": "^2.3"
     },
-    "conflict": {
-        "wp-cli/wp-cli": "*"
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
     },
     "authors": [
         {
