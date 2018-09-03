@@ -95,7 +95,7 @@ if ($wordpressFinder->locateRoot($PATH)) {
   }
 
   // For now WP-CLI version must be anywhere between 2.0.0 and 3.0.0.
-  if (gettype($WP_CLI_VERSION) == 'string' && version_compare($WP_CLI_VERSION, '2.0.0') && version_compare('3.0.0', $WP_CLI_VERSION, '<=')) {
+  if (gettype($WP_CLI_VERSION) == 'string' && version_compare($WP_CLI_VERSION, '2.0.0') && version_compare('3.0.0', $WP_CLI_VERSION)) {
 
     // We need to be in the WordPress directory to fire the command.
     // Drush Launcher does this via Drush's `drush_set_option('root', $webRoot);`.
