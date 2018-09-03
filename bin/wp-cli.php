@@ -61,11 +61,13 @@ if ($drupalFinder->locateRoot($ROOT)) {
   if (file_exists($drupalFinder->getVendorDir() . '/wp-cli/wp-cli/VERSION')) {
     $version_file = $drupalFinder->getVendorDir() . '/wp-cli/wp-cli/VERSION';
     $DRUSH_VERSION = file_get_contents($version_file);
-    echo "WP-CLI: {$DRUSH_VERSION}" . PHP_EOL;
+    $DRUSH_VERSION = str_replace(["\r", "\n"], '', $DRUSH_VERSION);
   }
 
   if ($DRUSH_VERSION == '2.0.1') {
+    chdir($drupalRoot);
     require_once $drupalFinder->getVendorDir() . '/wp-cli/wp-cli/php/boot-fs.php';
+    chdir($ROOT);
     exit(0);
   }
 
