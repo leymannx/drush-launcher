@@ -14,15 +14,18 @@ However, it is inconvenient to type `vendor/bin/wp` in order to execute WP-CLI c
 
     OSX:
     ```Shell
-    curl -OL https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.7/wp-cli.phar
+    curl -OL https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.8/wp-cli.phar
     ```
 
     Linux:
 
     ```Shell
-    wget -O wp-cli.phar https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.7/wp-cli.phar
+    wget -O wp-cli.phar https://github.com/leymannx/wp-cli-launcher/releases/download/0.0.8/wp-cli.phar
     ```
-2. Make downloaded file executable: `chmod +x wp-cli.phar`
+2. Make downloaded file executable:
+    ```Shell
+    chmod +x wp-cli.phar
+    ```
 3. Move wp-cli.phar to a location listed in your `$PATH`, rename to `wp`: 
 
     ```Shell
@@ -55,7 +58,7 @@ You may avoid the error and instead hand off execution to a global WP-CLI (any v
 by doing *either* of:
 
 1. Export an environment variable: `export WP_CLI_LAUNCHER_FALLBACK=/path/to/wp`
-1. Specify an option: `--fallback=/path/to/wp`
+2. Specify an option: `--fallback=/path/to/wp`
 
 ## Xdebug compatibility
 
