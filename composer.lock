@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f89759b8c1df9f093c4673567107800",
+    "content-hash": "1f2c48b6021274a14e76ea2918207832",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -64,16 +64,16 @@
         },
         {
             "name": "leymannx/wordpress-finder",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leymannx/wordpress-finder.git",
-                "reference": "8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4"
+                "reference": "0b4c15591ef1b8b44c3bc70ca3c2e3a37ef19e33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leymannx/wordpress-finder/zipball/8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4",
-                "reference": "8bed2cc8019d2a5a03ff0aea85a878fb4d179ce4",
+                "url": "https://api.github.com/repos/leymannx/wordpress-finder/zipball/0b4c15591ef1b8b44c3bc70ca3c2e3a37ef19e33",
+                "reference": "0b4c15591ef1b8b44c3bc70ca3c2e3a37ef19e33",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 }
             ],
             "description": "Helper class to locate a WordPress installation from a given path.",
-            "time": "2018-09-03T11:40:42+00:00"
+            "time": "2018-09-04T12:22:35+00:00"
         },
         {
             "name": "padraic/humbug_get_contents",
