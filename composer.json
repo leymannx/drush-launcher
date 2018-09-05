@@ -1,6 +1,6 @@
 {
     "name": "leymannx/wp-cli-launcher",
-    "description": "Provides a wp-cli executable for your global PATH",
+    "description": "Provides a WP-CLI executable for your global PATH",
     "license": "GPL-2.0-or-later",
     "require": {
         "leymannx/wordpress-finder": "^0.0.5",
