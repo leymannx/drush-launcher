@@ -30,24 +30,16 @@ $VERSION_CHECK = FALSE;
 $SELF_UPDATE = FALSE;
 
 foreach ($_SERVER['argv'] as $arg) {
-  // If a variable to set was indicated on the previous iteration,
-  // then set the value of the named variable (e.g. "ROOT") to "$arg".
-  if ($VAR) {
-    $$VAR = "$arg";
-    $VAR = FALSE;
+  switch ($arg) {
+    case "--version":
+      $VERSION_CHECK = TRUE;
+      break;
+    case "self-update":
+      $SELF_UPDATE = TRUE;
+      break;
   }
-  else {
-    switch ($arg) {
-      case "--version":
-        $VERSION_CHECK = TRUE;
-        break;
-      case "self-update":
-        $SELF_UPDATE = TRUE;
-        break;
-    }
-    if (substr($arg, 0, 7) == "--path=") {
-      $PATH = substr($arg, 7);
-    }
+  if (substr($arg, 0, 7) == "--path=") {
+    $PATH = substr($arg, 7);
   }
 }
 
