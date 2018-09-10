@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1faaaf302952a5af82370a7765837149",
+    "content-hash": "488d6598e0825744b5d24601be4a39a1",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -64,7 +64,7 @@
         },
         {
             "name": "leymannx/wordpress-finder",
-            "version": "0.0.1",
+            "version": "0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leymannx/wordpress-finder.git",
